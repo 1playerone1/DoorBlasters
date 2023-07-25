@@ -30,6 +30,9 @@ void UPlayerAnimInstance::UpdateAnimationProperties(float DeltaTime)
 		{
 			bIsAccelerating = false;
 		}
+
+		// Is weapon equipped
+		bWeaponEquipped = PlayerCharacter->IsWeaponEquipped();
 	}
 }
 
