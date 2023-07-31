@@ -21,6 +21,8 @@ void UPlayerAnimInstance::UpdateAnimationProperties(float DeltaTime)
 		// Is the character in the air?
 		bIsInAir = PlayerCharacter->GetCharacterMovement()->IsFalling();
 
+		bIsCrouched = PlayerCharacter->bIsCrouched;
+
 		// Is the character accelerating?
 		if (PlayerCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f)
 		{
@@ -33,6 +35,9 @@ void UPlayerAnimInstance::UpdateAnimationProperties(float DeltaTime)
 
 		// Is weapon equipped
 		bWeaponEquipped = PlayerCharacter->IsWeaponEquipped();
+
+		AO_Yaw = PlayerCharacter->GetAO_Yaw();
+		AO_Pitch = PlayerCharacter->GetAO_Pitch();
 	}
 }
 
